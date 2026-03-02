@@ -1,21 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-
-const generalSans = localFont({
-  src: [
-    {
-      path: "../public/fonts/general-sans/GeneralSans-Variable.woff2",
-      style: "normal"
-    },
-    {
-      path: "../public/fonts/general-sans/GeneralSans-VariableItalic.woff2",
-      style: "italic"
-    }
-  ],
-  display: "swap",
-  variable: "--font-sans"
-});
 
 export const metadata: Metadata = {
   title: "E-COMEX Platform",
@@ -29,7 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={generalSans.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

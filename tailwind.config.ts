@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"]
+        sans: ["General Sans", "system-ui", "sans-serif"]
       },
       colors: {
         midnight: "#070b12",

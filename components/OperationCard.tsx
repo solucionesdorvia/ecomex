@@ -1,11 +1,12 @@
 import { Operation } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+import { Badge, type BadgeProps } from "@/components/ui/badge";
 import { Panel } from "@/components/ui/panel";
 
 type OperationCardProps = Operation;
 
-const statusStyles: Record<Operation["status"], string> = {
+const statusStyles: Record<Operation["status"], NonNullable<BadgeProps["variant"]>> =
+  {
   "on-track": "success",
   risk: "warning",
   hold: "neutral"
